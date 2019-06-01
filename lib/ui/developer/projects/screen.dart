@@ -12,31 +12,36 @@ class NewProjectsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ProjectState>(
       builder: (context, model, child) => Scaffold(
-            appBar: AppBar(
-              leading: AccountButton(),
-              title: Text('New Projects'),
-              actions: <Widget>[
-                FilterButton(),
-              ],
-            ),
-            body: Builder(
-              builder: (_) {
-                if (model?.projects == null || model.projects.isEmpty) {
-                  return Center(
+            body: CustomScrollView(
+              slivers: <Widget>[
+                SliverAppBar(
+                  expandedHeight: 75,
+                  leading: AccountButton(),
+                  title: Text('New Projects'),
+                  actions: <Widget>[
+                    FilterButton(),
+                  ],
+                ),
+                if (model?.projects == null || model.projects.isEmpty) ...[
+                  SliverFillRemaining(
+                      child: Center(
                     child: Text(
                       'No Projects Avaliable',
                       style: Theme.of(context).textTheme.title,
                     ),
-                  );
-                }
-                return ListView.builder(
-                  itemBuilder: (context, index) {
-                    final _item = model.projects[index];
-                    return NewProjectItem(project: _item);
-                  },
-                  itemCount: model.projects.length,
-                );
-              },
+                  ))
+                ] else ...[
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        final _item = model.projects[index];
+                        return NewProjectItem(project: _item);
+                      },
+                      childCount: model.projects.length,
+                    ),
+                  ),
+                ],
+              ],
             ),
           ),
     );
