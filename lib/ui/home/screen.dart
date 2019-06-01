@@ -66,78 +66,82 @@ class LoginScreen extends StatelessWidget {
             ),
             Expanded(
               child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.all(30.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                              child: Text(
-                            'Pick a Side!',
-                            style: Theme.of(context).textTheme.display1,
-                          )),
-                          Container(
-                              child: Text(
-                            'The app will change depending on your user login.',
-                            style: TextStyle(
-                              color: Colors.grey[400],
-                            ),
-                          )),
-                        ],
+                child: SizedBox(
+                  width: 400,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.all(30.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                                child: Text(
+                              'Pick a Side!',
+                              style: Theme.of(context).textTheme.display1,
+                            )),
+                            Container(
+                                child: Text(
+                              'The app will change depending on your user login.',
+                              style: TextStyle(
+                                color: Colors.grey[400],
+                              ),
+                            )),
+                          ],
+                        ),
                       ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(30.0),
-                      child: Consumer<AuthState>(
-                        builder: (context, model, child) => Flex(
-                              direction: Axis.horizontal,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Flexible(
-                                  flex: 1,
-                                  child: RaisedButton(
-                                    color: Colors.blueAccent,
-                                    child: Container(
-                                      width: 100,
-                                      child: Text(
-                                        'Client',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
+                      Container(
+                        padding: EdgeInsets.all(30.0),
+                        child: Consumer<AuthState>(
+                          builder: (context, model, child) => Flex(
+                                direction: Axis.horizontal,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Flexible(
+                                    flex: 1,
+                                    child: RaisedButton(
+                                      color: Colors.blueAccent,
+                                      child: Container(
+                                        width: 100,
+                                        child: Text(
+                                          'Client',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
+                                        ),
                                       ),
+                                      onPressed: () {
+                                        model.login(false);
+                                      },
                                     ),
-                                    onPressed: () {
-                                      model.login(false);
-                                    },
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 1,
-                                  child: RaisedButton(
-                                    color: Colors.blueGrey,
-                                    child: Container(
-                                      width: 100,
-                                      child: Text(
-                                        'Developer',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.white),
+                                  Flexible(
+                                    flex: 1,
+                                    child: RaisedButton(
+                                      color: Colors.blueGrey,
+                                      child: Container(
+                                        width: 100,
+                                        child: Text(
+                                          'Developer',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
+                                        ),
                                       ),
+                                      onPressed: () {
+                                        model.login(true);
+                                      },
                                     ),
-                                    onPressed: () {
-                                      model.login(true);
-                                    },
                                   ),
-                                ),
-                              ],
-                            ),
-                      ),
-                    )
-                  ],
+                                ],
+                              ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             )
