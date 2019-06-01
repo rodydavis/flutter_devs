@@ -76,6 +76,14 @@ class _AddProjectScreenState extends State<AddProjectScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Add Project'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.save),
+            onPressed: () {
+              Navigator.pop(context, _project);
+            },
+          )
+        ],
       ),
       body: Form(
         key: _formKey,
@@ -84,6 +92,7 @@ class _AddProjectScreenState extends State<AddProjectScreen> {
             Container(
               padding: EdgeInsets.all(8.0),
               child: TextFormField(
+                autofocus: true,
                 decoration: InputDecoration(hintText: 'Project Name'),
                 initialValue: _project?.name,
                 onSaved: (val) => _project?.name = val,
