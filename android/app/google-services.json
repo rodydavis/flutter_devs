@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1007648282453",
+    "firebase_url": "https://flutter-devs-af048.firebaseio.com",
+    "project_id": "flutter-devs-af048",
+    "storage_bucket": "flutter-devs-af048.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007648282453:android:d5a3f262cb8e5ff0",
+        "android_client_info": {
+          "package_name": "com.appleeducate.flutterdevs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007648282453-gkuoob0kia4jtga9dkvteg2dkslto3ir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVbta3VetT5w0ptjCwpkA0-PWnm_gUIBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007648282453-gkuoob0kia4jtga9dkvteg2dkslto3ir.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007648282453-517t6823f4086k53ovb9nctusmddsgo8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appleeducate.flutterdevs"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
