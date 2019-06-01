@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_devs/ui/developer/account/screen.dart';
 import 'package:provider/provider.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -12,6 +13,7 @@ class NewProjectsScreen extends StatelessWidget {
     return Consumer<ProjectState>(
       builder: (context, model, child) => Scaffold(
             appBar: AppBar(
+              leading: AccountButton(),
               title: Text('New Projects'),
               actions: <Widget>[
                 FilterButton(),
@@ -37,6 +39,34 @@ class NewProjectsScreen extends StatelessWidget {
               },
             ),
           ),
+    );
+  }
+}
+
+class AccountButton extends StatelessWidget {
+  const AccountButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => AccountScreen(),
+              fullscreenDialog: true,
+            ),
+          );
+        },
+        child: CircleAvatar(
+          backgroundColor: Colors.redAccent,
+          child: Icon(Icons.person, color: Colors.white),
+        ),
+      ),
     );
   }
 }

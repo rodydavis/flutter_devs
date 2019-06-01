@@ -11,6 +11,7 @@ class Project {
     this.hours,
     this.openSourced,
     @required this.dateCreated,
+    this.description,
   });
 
   final String name;
@@ -18,6 +19,7 @@ class Project {
   final int hours;
   final num bounty;
   final DateTime dateCreated;
+  final String description;
 
   factory Project.fromJson(Map<String, dynamic> json) =>
       _$ProjectFromJson(json);

@@ -2,7 +2,7 @@ name: flutter_devs
 description: A new Flutter project.
 version: 1.0.0+1
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -10,10 +10,11 @@ dependencies:
   json_annotation: ^2.4.0
   cupertino_icons: ^0.1.2
   provider: ^2.0.1+1
-  cloud_firestore: ^0.12.1
+  # cloud_firestore: ^0.12.1
+  # firebase_ui: ^1.0.5
   localstorage: ^2.0.0
-  firebase_ui: ^1.0.5
   timeago: ^2.0.16
+  dart_firebase: ^0.0.1+1
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +24,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
