@@ -11,6 +11,9 @@ dependencies:
   cupertino_icons: ^0.1.2
   provider: ^2.0.1+1
   cloud_firestore: ^0.12.1
+  localstorage: ^2.0.0
+  firebase_ui: ^1.0.5
+  timeago: ^2.0.16
 
 dev_dependencies:
   flutter_test:

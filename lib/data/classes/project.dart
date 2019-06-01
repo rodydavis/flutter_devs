@@ -10,7 +10,7 @@ class Project {
     this.bounty,
     this.hours,
     this.openSourced,
-    this.dateCreated,
+    @required this.dateCreated,
   });
 
   final String name;
