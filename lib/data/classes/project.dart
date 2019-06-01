@@ -14,12 +14,12 @@ class Project {
     this.description,
   });
 
-  final String name;
-  final bool openSourced;
-  final int hours;
-  final num bounty;
+  String name;
+  bool openSourced;
+  int hours;
+  num bounty;
   final DateTime dateCreated;
-  final String description;
+  String description;
 
   factory Project.fromJson(Map<String, dynamic> json) =>
       _$ProjectFromJson(json);
